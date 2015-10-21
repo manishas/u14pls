@@ -5,7 +5,7 @@ VERSION=2.2.1
 # Make sure Java is installed
 java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
 if [[ -z "$java_version" ]]; then
-  echo "ElasticSearch needs Java to be installed on your system. Exiting."
+  echo "Neo4j needs Java to be installed on your system. Exiting."
   exit 1
 fi
 

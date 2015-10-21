@@ -1,10 +1,12 @@
 #!/bin/bash -e
 
-# Install Java
-sudo apt-get install -y openjdk-6-jdk
-echo 'export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64' >> $HOME/.bashrc
-echo 'export PATH=$PATH:/usr/lib/jvm/java-6-openjdk-amd64/jre/bin' >> $HOME/.bashrc
-. $HOME/.bashrc
+# Make sure Java is installed
+java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
+if [[ -z "$java_version" ]]; then
+  echo "Kestrel needs Java to be installed on your system. Exiting."
+  exit 1
+fi
+
 
 # Install sbt
 sudo wget http://repo.typesafe.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/0.11.2/sbt-launch.jar
