@@ -15,7 +15,7 @@ sudo tar xzf elasticsearch-${VERSION}.tar.gz -C /usr/local && sudo rm -f elastic
 sudo ln -s /usr/local/elasticsearch-${VERSION}/bin/elasticsearch /usr/local/bin/elasticsearch
 
 # Start elasticsearch
-sudo elasticsearch &
+#sudo elasticsearch &
 
 # Make sure service is running
-curl http://localhost:9200
+#curl http://localhost:9200

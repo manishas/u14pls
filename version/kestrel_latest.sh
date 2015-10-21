@@ -21,4 +21,4 @@ cd /usr/local/kestrel
 sbt clean update package-dist
 
 # Run kestrel
-/usr/local/kestrel/dist/kestrel/scripts/devel.sh
+#/usr/local/kestrel/dist/kestrel/scripts/devel.sh
