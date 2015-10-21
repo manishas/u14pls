@@ -2,6 +2,11 @@
 
 VERSION=1.5.1
 
+sudo apt-get install -y openjdk-6-jdk
+echo 'export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64' >> $HOME/.bashrc
+echo 'export PATH=$PATH:/usr/lib/jvm/java-6-openjdk-amd64/jre/bin' >> $HOME/.bashrc
+. $HOME/.bashrc
+
 # Make sure Java is installed
 java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
 if [[ -z "$java_version" ]]; then
